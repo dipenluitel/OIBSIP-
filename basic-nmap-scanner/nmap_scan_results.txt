@@ -1,1 +1,69 @@
+=========================================
+NMAP SCAN RESULTS
+=========================================
 
+Target IP:
+192.168.1.68
+
+-----------------------------------------
+Basic Scan
+-----------------------------------------
+
+135/tcp  open  msrpc
+139/tcp  open  netbios-ssn
+445/tcp  open  microsoft-ds
+8090/tcp open  opsmessaging
+
+-----------------------------------------
+Service Version Scan
+-----------------------------------------
+
+135/tcp  Microsoft Windows RPC
+139/tcp  Microsoft Windows NetBIOS Session Service
+445/tcp  Microsoft-DS
+8090/tcp tcpwrapped
+
+-----------------------------------------
+OS Detection
+-----------------------------------------
+
+Operating System:
+Microsoft Windows 11 (24H2 - 25H2)
+
+-----------------------------------------
+Port Analysis
+-----------------------------------------
+
+Port 135
+Service: Microsoft RPC
+Purpose:
+Remote Procedure Call service used by Windows applications.
+Risk:
+Should not be exposed to untrusted networks because it may be targeted by attackers.
+
+Port 139
+Service: NetBIOS Session Service
+Purpose:
+Provides Windows file and printer sharing.
+Risk:
+Can expose shared resources if improperly configured.
+
+Port 445
+Service: Microsoft-DS (SMB)
+Purpose:
+Windows file and printer sharing.
+Risk:
+Frequently targeted by malware and ransomware. Should only be accessible within trusted networks.
+
+Port 8090
+Service: Unknown (tcpwrapped)
+Purpose:
+Likely a custom application or local service.
+Risk:
+The administrator should identify which application is using this port and restrict access if unnecessary.
+
+-----------------------------------------
+Conclusion
+-----------------------------------------
+
+The system has four open TCP ports. The Windows networking services (RPC, NetBIOS, and SMB) are expected on many Windows systems but should be protected by the Windows Firewall and not exposed to public networks. Port 8090 should be reviewed to confirm the application using it and whether it is required.
