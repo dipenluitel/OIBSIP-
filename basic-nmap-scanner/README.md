@@ -1,41 +1,41 @@
 # Port Analysis
 
-**Port**		 
-135	
+**1. Port**		 
+135,	
 **Service**
-Microsoft RPC
+Microsoft RPC,
 **Description**
-Used for communication between Windows applications and services.	
+Used for communication between Windows applications and services,	
 **Security Risk**
 Should not be exposed to untrusted networks because attackers may target RPC vulnerabilities.
 
 
-**Port**
-139	
+**2. Port**
+139,	
 **Service**
-NetBIOS Session Service	
+NetBIOS Session Service,
 **Description**
-Provides file and printer sharing over NetBIOS.	
+Provides file and printer sharing over NetBIOS, 	
 **Security Risk**
 Can reveal shared resources and should generally be disabled if not needed.
 
 
-**Port**		 
-445
+**3. Port**		 
+445,
 **Service**
-Microsoft-DS (SMB)	
+Microsoft-DS (SMB),	
 **Description**
-Used for Windows file and printer sharing.
+Used for Windows file and printer sharing,
 **Security Risk**
 Frequently targeted by malware and ransomware. It should be accessible only on trusted networks.
 
 
-**Port**		 
-8090	
+**4. Port**		 
+8090,	
 **Service**
-Unknown (tcpwrapped)	
+Unknown (tcpwrapped),	
 **Description**
-A custom application or service is listening on this port, but Nmap could not identify it.
+A custom application or service is listening on this port, but Nmap could not identify it,
 **Security Risk**
 Verify which application is using this port. If unnecessary, close it or restrict access with a firewall.
 
