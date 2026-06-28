@@ -1,0 +1,72 @@
+==================================================
+UFW FIREWALL CONFIGURATION TEST RESULTS
+==================================================
+
+Project:
+Basic Firewall Configuration with UFW
+
+Date:
+28 June 2026
+
+Operating System:
+Ubuntu Linux
+
+--------------------------------------------------
+1. UFW STATUS
+--------------------------------------------------
+
+Firewall Status: Active
+
+Default Policy:
+- Incoming: DENY
+- Outgoing: ALLOW
+- Routed: DISABLED
+
+--------------------------------------------------
+2. CONFIGURED RULES
+--------------------------------------------------
+
+22/tcp   ALLOW IN   Anywhere
+80/tcp   DENY IN    Anywhere
+443/tcp  ALLOW IN   Anywhere
+21/tcp   DENY IN    Anywhere
+
+IPv6 Rules:
+
+22/tcp (v6)   ALLOW IN   Anywhere (v6)
+80/tcp (v6)   DENY IN    Anywhere (v6)
+443/tcp (v6)  ALLOW IN   Anywhere (v6)
+21/tcp (v6)   DENY IN    Anywhere (v6)
+
+--------------------------------------------------
+3. TESTING METHOD
+--------------------------------------------------
+
+The firewall configuration was verified using the following command:
+
+sudo ufw status verbose
+
+The output confirmed that:
+
+- SSH (22) is allowed.
+- HTTP (80) is denied.
+- HTTPS (443) is allowed.
+- FTP (21) is denied.
+
+The firewall status showed "active", indicating that UFW is enabled and enforcing the configured rules.
+
+--------------------------------------------------
+4. OBSERVATIONS
+--------------------------------------------------
+
+- UFW was successfully enabled.
+- Duplicate rules were skipped automatically because they already existed.
+- Both IPv4 and IPv6 firewall rules were applied.
+- The default security policy blocks incoming connections unless explicitly allowed.
+
+--------------------------------------------------
+5. CONCLUSION
+--------------------------------------------------
+
+The firewall was successfully configured using UFW. The required rules were applied correctly, allowing secure services such as SSH and HTTPS
+while blocking HTTP and FTP traffic. The firewall status verification confirmed that all rules are active and functioning as expected.
