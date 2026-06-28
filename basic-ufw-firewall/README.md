@@ -1,8 +1,8 @@
 # Project Overview
-**What is UFW?**
-**Why Firewalls Matter**
-**Installation Steps**
-**Commands Used**
-**Firewall Rules**
-**Testing Method**
-**Conclusion**
+**What is UFW?**<br />
+**Why Firewalls Matter**<br />
+**Installation Steps**<br />
+**Commands Used**<br />
+**Firewall Rules**<br />
+**Testing Method**<br />
+**Conclusion**<br />
