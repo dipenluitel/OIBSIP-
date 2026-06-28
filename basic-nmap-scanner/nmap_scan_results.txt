@@ -66,4 +66,6 @@ The administrator should identify which application is using this port and restr
 Conclusion
 -----------------------------------------
 
-The system has four open TCP ports. The Windows networking services (RPC, NetBIOS, and SMB) are expected on many Windows systems but should be protected by the Windows Firewall and not exposed to public networks. Port 8090 should be reviewed to confirm the application using it and whether it is required.
+The system has four open TCP ports. The Windows networking services (RPC, NetBIOS, and SMB) are expected on many Windows systems but should be 
+protected by the Windows Firewall and not exposed to public networks. Port 8090 should be reviewed to confirm the application using it and
+whether it is required.
