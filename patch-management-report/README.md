@@ -26,6 +26,6 @@ The objective of this project is to:
 
 ## Author
 
-**Name:** Your Name
+**Name:** Dipen Luitel
 
-**Internship:** Cyber Security Internship
+**Internship:** OASIS INFOBYTE Cyber Security Internship
