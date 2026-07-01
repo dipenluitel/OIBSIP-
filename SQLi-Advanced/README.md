@@ -54,7 +54,7 @@ Burp Suite Community Edition was used to intercept the HTTP request sent from th
 
 ```text
 id=1&Submit=Submit
-
+```
 ---
 
 ## Findings
