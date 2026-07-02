@@ -1,43 +1,123 @@
-# Port Analysis
+# Task 1 – Basic Nmap Scanner
 
-**1. Port**		 
-135,	
-**Service**
-Microsoft RPC,
-**Description**
-Used for communication between Windows applications and services,	
-**Security Risk**
-Should not be exposed to untrusted networks because attackers may target RPC vulnerabilities.
+## Objective
+
+Perform a basic network reconnaissance scan using Nmap to identify active hosts, open ports, and running services on a local test network. This task demonstrates the fundamentals of network enumeration and security assessment.
+
+---
+
+## Tools Used
+
+- Nmap
+- Windows 11
+- Command Prompt / PowerShell
+- Local Test Network
+
+---
+
+## Project Structure
+
+```
+Basic-Nmap-Scanner/
+├── README.md
+├── nmap_scan_results.txt
+└── screenshots/
+    ├── scan_command.png
+    └── scan_results.png
+```
+
+---
+
+## Scan Performed
+
+The following command was used to identify open ports, services, and operating system information:
+
+```bash
+nmap -sV -O <target-ip>
+```
+
+Example:
+
+```bash
+nmap -sV -O 192.168.1.68
+```
+
+### Command Options
+
+| Option | Description |
+|---------|-------------|
+| `-sV` | Detects service versions running on open ports |
+| `-O` | Attempts to detect the operating system |
+
+---
+
+## Scan Results
+
+The scan identified:
+
+- Active host on the local network
+- Open TCP ports
+- Running services and versions
+- Estimated operating system information
+
+Example findings:
+
+| Port | Service | Status |
+|------|---------|--------|
+| 80 | HTTP | Open |
+| 443 | HTTPS | Open |
+| 3306 | MySQL | Open |
+
+> Note: Actual results depend on the target machine.
+
+---
+
+## Security Observations
+
+- Open ports increase the attack surface.
+- Unnecessary services should be disabled.
+- Services should always be updated to the latest version.
+- Firewalls should restrict access to sensitive ports.
+
+---
+
+## How to Run
+
+1. Install Nmap.
+2. Open Command Prompt or PowerShell.
+3. Execute:
+
+```bash
+nmap -sV -O <target-ip>
+```
+
+4. Save the output:
+
+```bash
+nmap -sV -O <target-ip> > nmap_scan_results.txt
+```
+
+---
+
+## Learning Outcomes
+
+- Learned how to use Nmap for network reconnaissance.
+- Identified open ports and running services.
+- Understood service version detection.
+- Learned basic operating system fingerprinting.
+- Practiced documenting security assessment findings.
+
+---
+
+## Ethics Statement
+
+This scan was performed only on a local machine or a network that I own and have authorization to assess. No unauthorized systems or public networks were scanned.
+
+---
 
 
-**2. Port**
-139,	
-**Service**
-NetBIOS Session Service,
-**Description**
-Provides file and printer sharing over NetBIOS, 	
-**Security Risk**
-Can reveal shared resources and should generally be disabled if not needed.
+## Author
 
+**Dipen Luitel**
 
-**3. Port**		 
-445,
-**Service**
-Microsoft-DS (SMB),	
-**Description**
-Used for Windows file and printer sharing,
-**Security Risk**
-Frequently targeted by malware and ransomware. It should be accessible only on trusted networks.
-
-
-**4. Port**		 
-8090,	
-**Service**
-Unknown (tcpwrapped),	
-**Description**
-A custom application or service is listening on this port, but Nmap could not identify it,
-**Security Risk**
-Verify which application is using this port. If unnecessary, close it or restrict access with a firewall.
-
-# Security Analysis
-The scan identified four open TCP ports on the Windows 11 system. Ports 135, 139, and 445 are standard Windows networking services used for RPC and file sharing. These services are common in Windows environments but should not be exposed to untrusted networks because they have historically been targeted by attackers. Port 8090 was detected as open but returned "tcpwrapped," indicating that the service is protected or not identifiable by Nmap. The system firewall should remain enabled, unnecessary services should be disabled, and file sharing should only be allowed on trusted networks.
+OIBSIP – Cyber Security Internship
