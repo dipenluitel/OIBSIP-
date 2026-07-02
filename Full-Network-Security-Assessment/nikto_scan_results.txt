@@ -1,0 +1,59 @@
+=====================================================
+Nikto Web Server Scan Results
+=====================================================
+
+Assessment Date:
+July 2026
+
+Tool:
+Nikto
+
+Command Used:
+
+nikto -h http://192.168.1.68/dvwa
+
+Target
+
+http://192.168.1.68/dvwa
+
+Summary of Findings
+
+[Medium]
+Missing X-Frame-Options security header.
+
+[Low]
+Cookie created without HttpOnly flag.
+
+[Low]
+robots.txt file accessible.
+
+[Medium]
+Directory indexing enabled.
+
+[Medium]
+Configuration directory accessible.
+
+[Low]
+HTTP TRACE method enabled.
+
+[Informational]
+Apache server version disclosed.
+
+[Informational]
+PHP version disclosed.
+
+Risk Assessment
+
+Overall Risk:
+Medium
+
+Recommendations
+
+• Disable directory indexing.
+• Disable HTTP TRACE.
+• Add X-Frame-Options header.
+• Configure secure cookies.
+• Restrict access to sensitive directories.
+• Upgrade and patch Apache/PHP regularly.
+
+End of Report
