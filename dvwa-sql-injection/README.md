@@ -1,119 +1,140 @@
-# SQL Injection Demonstration on DVWA (Low Security)
+# Task 3 – SQL Injection Demonstration on DVWA (Low Security)
+
+## Objective
+
+The objective of this project is to demonstrate a classic SQL Injection vulnerability using the Damn Vulnerable Web Application (DVWA) running in a local environment. The assessment was performed only for educational purposes on a self-hosted application to understand how SQL Injection works, its potential impact, and recommended mitigation techniques.
+
+---
+
+## Tools Used
+
+- DVWA (Damn Vulnerable Web Application)
+- XAMPP (Apache, PHP, MySQL)
+- Windows 11
+- Web Browser (Google Chrome)
+- Burp Suite (Optional)
+
+---
+
+## Project Structure
+
+```
+SQL-Injection-DVWA-Low/
+├── README.md
+├── sql_injection_notes.md
+├── screenshots/
+│   ├── 01_dvwa_setup.png
+│   ├── 02_security_low.png
+│   ├── 03_sql_injection_page.png
+│   ├── 04_payload_test_1.png
+│   ├── 05_payload_test_2.png
+│   └── 06_results.png
+```
+
+---
 
 ## Project Overview
 
-This project demonstrates a classic SQL Injection vulnerability using Damn Vulnerable Web Application (DVWA) running on a local XAMPP server. 
-The objective is to understand how SQL Injection works, observe the data exposed by the vulnerability, and learn how developers can prevent 
-this type of attack.
+DVWA is an intentionally vulnerable web application designed for learning web security.
 
-> **Ethical Notice:** This demonstration was performed only on a locally hosted DVWA instance for educational purposes. No real websites or
-> third-party systems were targeted.
+For this task:
 
----
-
-# Objectives
-
-* Install and configure DVWA on a local machine.
-* Set the DVWA security level to **Low**.
-* Demonstrate SQL Injection in the SQL Injection module.
-* Observe the information returned by the application.
-* Explain why the vulnerability exists.
-* Describe secure coding techniques to prevent SQL Injection.
+- DVWA was installed locally using XAMPP.
+- The security level was set to **Low**.
+- The SQL Injection module was tested.
+- Multiple SQL Injection test inputs were evaluated.
+- The application responses were documented.
+- Findings and remediation techniques were analysed.
 
 ---
 
-# Tools Used
+## Environment
 
-* Windows 11
-* XAMPP
-* Apache Web Server
-* MySQL Database
-* DVWA (Damn Vulnerable Web Application)
-* Google Chrome (or another web browser)
+| Component | Value |
+|----------|-------|
+| Operating System | Windows 11 |
+| Web Server | Apache (XAMPP) |
+| Database | MySQL |
+| PHP Version | 8.x |
+| DVWA Security Level | Low |
 
 ---
 
-# DVWA Setup
+## Testing Process
+
+The following steps were completed:
 
 1. Installed XAMPP.
-2. Started Apache and MySQL services.
-3. Copied the DVWA folder into the XAMPP `htdocs` directory.
-4. Configured the DVWA database settings.
-5. Created the database using the DVWA setup page.
-6. Logged in using the default administrator account.
-7. Changed the DVWA Security Level to **Low**.
+2. Installed and configured DVWA.
+3. Created the DVWA database.
+4. Logged into DVWA.
+5. Set the security level to **Low**.
+6. Opened the SQL Injection module.
+7. Performed SQL Injection testing.
+8. Recorded observations.
+9. Captured screenshots.
 
 ---
 
-# What is SQL Injection?
+## Results
 
-SQL Injection is a web security vulnerability that occurs when an application includes user input directly in SQL queries without proper
-protection. An attacker can manipulate the query by entering specially crafted input, causing the database to return unintended information or
-execute unintended commands.
+The application was vulnerable to SQL Injection at the Low security level.
 
----
+The testing demonstrated that insufficient input validation can expose sensitive information stored in the database.
 
-# Why the Demonstration Works
-
-The SQL Injection page in DVWA (Low Security) does not properly separate user input from SQL commands. Because the application does not use
-parameterized queries or prepared statements, specially crafted input can change the logic of the SQL query.
+All testing was performed exclusively on the local DVWA instance.
 
 ---
 
-# Demonstration
+## Security Impact
 
-## Attempt 1
+SQL Injection vulnerabilities may allow an attacker to:
 
-* Payload: *(See `sql_injection_notes.md`)*
-* Result:
-
-  * Describe what DVWA displayed during your own test.
-  * Include the corresponding screenshot.
-
----
-
-## Attempt 2
-
-* Payload: *(See `sql_injection_notes.md`)*
-* Result:
-
-  * Describe what DVWA displayed during your own test.
-  * Include the corresponding screenshot.
+- Retrieve sensitive information
+- Bypass application logic
+- Modify database records
+- Delete information
+- Gain unauthorized access
+- Compromise application confidentiality
 
 ---
 
-# Data Exposed
+## Prevention
 
-During the demonstration, the vulnerable application returned database records that should normally only be displayed after valid input.
-This shows how SQL Injection can expose sensitive information when applications fail to validate and safely process user input.
+Developers should follow secure coding practices, including:
 
----
-
-# Prevention
-
-Developers can prevent SQL Injection by:
-
-* Using prepared statements (parameterized queries).
-* Validating and sanitizing user input.
-* Applying the principle of least privilege for database accounts.
-* Avoiding dynamic SQL built directly from user input.
-* Using secure error handling that does not reveal database information.
+- Use parameterized queries (Prepared Statements)
+- Validate all user input
+- Sanitize input where appropriate
+- Apply the principle of least privilege
+- Avoid displaying database error messages
+- Perform regular security testing
 
 ---
 
-# Screenshots
+## Learning Outcomes
 
-* DVWA Setup
-* Security Level (Low)
-* SQL Injection Module
-* Injection Attempt 1
-* Injection Attempt 2
-* Results
+This project helped demonstrate:
+
+- Basic SQL Injection concepts
+- How insecure database queries introduce vulnerabilities
+- The importance of input validation
+- Secure database programming practices
+- Responsible security testing in a controlled environment
 
 ---
 
-# Conclusion
+## Disclaimer
 
-This project demonstrated how SQL Injection vulnerabilities can expose database information when applications do not safely handle user input. 
-It also highlighted the importance of secure coding practices such as prepared statements and parameterized queries to protect web applications
-against SQL Injection attacks.
+This project was conducted **only against a locally hosted DVWA instance** for educational purposes.
+
+No testing was performed against public websites, production systems, or systems without explicit authorization.
+
+---
+
+
+## Author
+
+**Dipen Luitel**
+
+OIBSIP – Cyber Security Internship
