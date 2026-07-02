@@ -1,0 +1,53 @@
+=====================================================
+Nmap Scan Results
+=====================================================
+
+Assessment Date:
+July 2026
+
+Tool:
+Nmap 7.99
+
+Command Used:
+
+nmap -sV -O 192.168.1.68
+
+Target:
+192.168.1.68
+
+Host Status:
+Host is up.
+
+Operating System:
+Microsoft Windows 11
+
+Discovered Open Ports
+
+PORT      STATE   SERVICE        VERSION
+
+80/tcp    open    http           Apache HTTP Server
+135/tcp   open    msrpc          Microsoft Windows RPC
+139/tcp   open    netbios-ssn    Microsoft NetBIOS
+445/tcp   open    microsoft-ds   SMB
+8090/tcp  open    tcpwrapped
+
+Summary
+
+• Target host is reachable.
+• Multiple Windows services are exposed.
+• Apache web server is running.
+• SMB services are accessible.
+• Operating system successfully identified as Windows 11.
+
+Risk
+
+Medium
+
+Recommendations
+
+• Disable unused services.
+• Restrict SMB access.
+• Enable HTTPS.
+• Keep the operating system and applications updated.
+
+End of Report
